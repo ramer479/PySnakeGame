@@ -34,10 +34,8 @@ while game_on:
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         game_on = False
         score.game_over()
-    for ele in snake.turtle_list:
-        if snake.head == ele:
-            pass
-        elif snake.head.distance(ele) < 9:
+    for ele in snake.turtle_list[1:]:
+        if snake.head.distance(ele) < 9:
             game_on = False
             score.game_over()
 
